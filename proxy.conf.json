@@ -1,0 +1,8 @@
+{
+  "/d5-ece-rest/*": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": {"^/d5-ece-rest" : "/d5-ece-rest"}
+  }
+}
