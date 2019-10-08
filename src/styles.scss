@@ -1,0 +1,661 @@
+/* You can add global styles to this file, and also import other style files */
+
+//@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@import '/styles/modules/_variables.scss';
+
+input.ng-valid[required] {
+  border-left: 5px solid #42A948; /* green */
+}
+
+ //input.ng-invalid {
+ //  border-left: 5px solid #a94442; /* red */
+ //}
+
+
+.error{
+  padding: 12px;
+  color: red;
+}
+
+/* =|= Variables */
+
+/* Colors */
+$color-main: #003781;
+$color-highlighted: #55acee;
+$color-disabled: #b9b9b9;
+
+$color-background-light: #f6f6f6;
+$color-background-medium: #e5e5e5;
+$color-background-dark: #666;
+
+$color-text-light: #fff;
+$color-text-medium: #666;
+$color-text-dark: #333;
+
+$color-border-light: #ccc;
+$color-border-medium: #bbb;
+$color-border-dark: #999;
+
+/* Sizes */
+
+/**
+ * Following sizes are no more used,
+ * the frame adjusts its size automatically.
+ * They are still kept here for reference.
+ */
+
+/* $size-frame-width: 871px; */
+/* $size-frame-height: 638px; */
+
+/* Typography */
+
+$font-stack: arial, sans-serif;
+$font-size-main: 1.4em;
+
+/* =|= Typography */
+
+body {
+  background: $color-background-light;
+  color: $color-text-dark;
+  font-size: $font-size-main;
+  line-height: 1.5;
+}
+
+/* =|= Containers */
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body, .frame, .wrapper {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  overflow: visible;
+}
+
+.frame {
+  display: block;
+  overflow: auto;
+  transform: translate(0, 0);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =|= Icons */
+
+svg.sprite {
+  display: none;
+}
+
+svg.icon {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 1em;
+  height: 1em;
+}
+
+/* =|= User interface */
+
+.button {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: baseline;
+  overflow: hidden;
+  position: relative;
+  margin: .5em 0;
+  padding: 0;
+  background: none;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 1.5;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  opacity: .8;
+}
+
+.button > .text {
+  display: block;
+  padding: .5em .8333333333333333em;
+  background-color: $color-highlighted;
+  color: $color-text-light;
+}
+
+.button.active > .text {
+  background-color: $color-main;
+  color: $color-text-light;
+}
+
+.button.disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.button.disabled > .text {
+  background-color: $color-disabled;
+  color: $color-text-light;
+}
+
+.btn-default {
+  border-color: #007ab3;
+}
+
+/* =|= Hints */
+
+.hint {
+  color: $color-text-medium;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* =|= Forms */
+
+fieldset,
+legend,
+input[type="text"],
+select,
+textarea {
+  box-sizing: border-box;
+}
+
+/* Fildsets */
+
+.fieldset {
+  margin: .4166666666666667em 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+.fieldset > .list > li {
+  display: flex;
+  align-items: center;
+  margin: .5em 0;
+}
+
+.fieldset > .list > li > * + .text {
+  padding: 0 .5em;
+}
+
+.fieldset > .list > li > .label > .text {
+  padding-right: 1em;
+  width: 16em;
+}
+
+.fieldset > .column:nth-of-type(odd) {
+  padding-right: .6666666666666667em;
+}
+
+.fieldset > .column:nth-of-type(even) {
+  padding-left: .6666666666666667em;
+}
+
+/* Field groups */
+
+.list.field-group {
+  display: inline-flex;
+}
+
+.list.field-group .label {
+  flex-direction: row-reverse;
+}
+
+.list.field-group > li + li > .label {
+  margin-left: 2em;
+}
+
+.list.field-group > li:first-child > input[type="checkbox"],
+.list.field-group > li:first-child > input[type="radio"],
+.list.field-group > li:first-child > .label > input[type="checkbox"],
+.list.field-group > li:first-child > .label > input[type="radio"] {
+  margin-left: 0;
+}
+
+/* Legend  */
+
+.legend {
+  display: block;
+  float: left;
+  margin: 0 0 .5em 0;
+  padding: .25em .5em;
+  width: 100%;
+  background: $color-main;
+  color: $color-text-light;
+  font-weight: bold;
+  white-space: normal;
+  box-sizing: border-box;
+}
+
+.legend + * {
+  clear: both;
+}
+
+/* Labels */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  color: $color-text-dark;
+}
+
+/* Checkbox and radio inputs */
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin: 0 .5em 0 0;
+  vertical-align: middle;
+}
+
+/* Text inputs */
+
+input[type="text"] {
+  padding: .1666666666666667em .5em;
+  font-size: 1em;
+  line-height: 1.5;
+  border: 1px solid $color-border-light;
+}
+
+/* Select */
+
+select {
+  padding: .1666666666666667em .5em;
+  font-size: 1em;
+  line-height: 1.5;
+  border: 1px solid $color-border-light;
+}
+
+/* Buttons */
+
+.button.submit,
+.button.back {
+  opacity: 1;
+}
+
+.button.submit {
+  padding-right: 1.25em;
+}
+
+.button.submit:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -1.25em;
+  width: 0;
+  height: 0;
+  border: 1.25em solid transparent;
+  border-left-color: $color-main;
+}
+
+.button.submit > .text,
+.button.back > .text {
+  background: $color-main;
+}
+
+.button.submit.disabled > .text,
+.button.back.disabled > .text {
+  background: $color-disabled;
+}
+
+.button.submit.disabled:after {
+  border-left-color: $color-disabled;
+}
+
+.button.back {
+  padding-left: 1.25em;
+}
+
+.button.back:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1.25em;
+  width: 0;
+  height: 0;
+  border: 1.25em solid transparent;
+  border-right-color: $color-main;
+}
+
+.button.back.disabled:after {
+  border-right-color: $color-disabled;
+}
+
+.button.back.disabled:after > .text {
+  background: $color-disabled;
+}
+
+/* Specialised fieldsets */
+
+/* Columns */
+.fieldset.column:nth-of-type(odd) {
+  padding-right: .6666666666666667em;
+  border-right: 1px solid $color-border-light;
+}
+
+.fieldset.column:nth-of-type(even) {
+  margin-left: -1px;
+  padding-left: .6666666666666667em;
+  border-left: 1px solid $color-border-light;
+}
+
+/* Validation */
+.fieldset.validation > .list {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.fieldset.validation > .list > li + li {
+  margin-right: .5em;
+}
+
+.fieldset.validation > .list .button {
+  margin: 0;
+}
+
+.fieldset.validation > .list > .orphan {
+  order: 1;
+  margin-right: auto;
+}
+
+/* =|= Definition lists */
+
+.def-list {
+  margin: 0;
+  padding: 0;
+}
+
+.def-list > .attribute {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.def-list > .value {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* =|= Tables */
+
+/* To do ! */
+
+/* =|= App wrapper */
+
+.wrapper.app {
+  width: 100%;
+  height: 100%;
+  padding: .4166666666666667em .6666666666666667em;
+}
+
+/* =|= Breadcrumb */
+
+.breadcrumb.wrapper {
+  float: left;
+}
+
+.breadcrumb.wrapper > .list {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Buttons */
+
+.breadcrumb.wrapper .button {
+  opacity: 1;
+  margin: 0;
+  padding-right: 1.25em;
+}
+
+.breadcrumb.wrapper .button > .text {
+  background-color: $color-highlighted;
+}
+
+.breadcrumb.wrapper li + li .button {
+  margin-left: -.5em;
+}
+
+.breadcrumb.wrapper li + li .button > .text {
+  padding-left: 1.75em;
+}
+
+.breadcrumb.wrapper li + li .button:before,
+.breadcrumb.wrapper .button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 1.25em solid transparent;
+}
+
+.breadcrumb.wrapper li + li .button:before {
+  top: 0;
+  left: 0;
+  border-left-color: $color-background-light;
+}
+
+.breadcrumb.wrapper .button:after {
+  top: 0;
+  right: -1.25em;
+  border-left-color: $color-highlighted;
+}
+
+.breadcrumb.wrapper .button.active > .text {
+  background-color: $color-main;
+}
+
+.breadcrumb.wrapper .button.active:after {
+  border-left-color: $color-main;
+}
+
+.breadcrumb.wrapper .button.disabled > .text {
+  background-color: $color-disabled;
+}
+
+.breadcrumb.wrapper .button.disabled:before {
+  border-left-color: $color-background-light;
+}
+
+.breadcrumb.wrapper .button.disabled:after {
+  border-left-color: $color-disabled;
+}
+
+/* To do: replace this horrible hack! */
+.breadcrumb.wrapper li:nth-last-child(1) .button {
+  z-index: 1;
+}
+
+.breadcrumb.wrapper li:nth-last-child(2) .button {
+  z-index: 2;
+}
+
+.breadcrumb.wrapper li:nth-last-child(3) .button {
+  z-index: 3;
+}
+
+.breadcrumb.wrapper li:nth-last-child(4) .button {
+  z-index: 4;
+}
+
+.breadcrumb.wrapper li:nth-last-child(5) .button {
+  z-index: 5;
+}
+
+/* =|= Main driver manager */
+
+.main-driver-manager .def-list {
+  margin: .5em;
+}
+
+.main-driver-manager .def-list > .value > .date {
+  font-weight: bold;
+}
+
+.main-driver-manager .button {
+  margin: 0;
+}
+
+/* =|= Page : driver */
+
+/* =|= Page : vehicle */
+
+/* =|= Page : result */
+
+/* =|= Helpers
+ *
+ * Please inlude all your styles before this section.
+ */
+
+.column {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.column + * {
+  clear: both;
+}
+
+.column + .column {
+  clear: none;
+}
+
+
+.mat-select-placeholder {text-align: left;}
+
+.mat-pseudo-checkbox::after {
+  color: $primary-blue;
+  top: 4px;
+}
+.mat-pseudo-checkbox-checked,
+.mat-pseudo-checkbox-indeterminate {
+  background: #FFF !important;
+}
+.mat-pseudo-checkbox.mat-pseudo-checkbox-checked,
+.mat-pseudo-checkbox.mat-pseudo-checkbox-indeterminate {
+  border: 2px solid $primary-blue !important;
+}
+.mat-primary .mat-option.mat-selected {color:$grey;}
+
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-arrow, .mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-trigger {
+  color: $primary-blue;
+}
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-underline{background-color:$primary-blue}
+.mat-select {
+  font-family: "allianz-neo-regular", Arial, sans-serif;
+  font-size: 16px;
+}
+
+.allianz-logo, .ulysse-logo {
+    background-repeat: no-repeat;
+    width: 150px;
+    margin-left: 20px;
+    display: inline-block;
+    float: left;
+    height: 75px;
+    background-size: contain;
+    background-position: 0 50%;
+    vertical-align: middle;
+}
+.allianz-logo {
+      background-image: url('/assets/images/logo_allianz.png');
+}
+
+.ulysse-logo {
+      background-image: url('/assets/images/logo-ulysse.svg');
+}
+
+.mat-calendar-body-selected {
+	background-color: #007ab3;
+}
+
+.mat-pseudo-checkbox.mat-pseudo-checkbox-checked {
+  background: none !important;
+}
+
+.employees {
+
+  .mat-input-flex {
+    border-bottom: 1px solid #4a4a4a;
+  }
+
+  .mat-focused {
+	.mat-form-field-ripple {
+		background: none;
+	}
+	.mat-select-arrow {
+		color: #4a4a4a !important;
+	}
+  }
+
+  .mat-select-value-text span {
+    color: #8c8c8c !important;
+  }
+
+  .mat-input-placeholder {
+    color: #8c8c8c !important;
+    top: 20px;
+  }
+
+  .mat-form-field {
+      width: 72%;
+      margin-top: 0;
+      @media screen and (max-width: 992px) {
+          width: 86%;
+      }
+  }
+
+  .contracts-type {
+
+    .mat-form-field {
+      @media screen and (max-width: 992px) {
+          width: 85%;
+      }
+    }
+  }
+}
+
+.mat-option {
+
+  font-family: allianz-neo-regular;
+
+  .mat-option-text {
+    font-family: allianz-neo-regular;
+  }
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #007ab3;
+}
+
+.btn-consult {
+  padding: 15px 37px;
+  border: 2px solid #007ab3;
+  border-radius: 5px;
+  float: right;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  letter-spacing: 1.5px;
+  @media screen and (max-width: 992px) {
+    float: left;
+    margin: 2rem 0;
+  }
+}
