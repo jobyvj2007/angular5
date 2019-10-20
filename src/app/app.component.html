@@ -1,0 +1,23 @@
+<div class="container">
+  <ece-header *ngIf="showIfnotUlyss"></ece-header>
+  <ece-nav [pageTitle]="pageTitle" *ngIf="showIfnotUlyss"></ece-nav>
+
+  <router-outlet></router-outlet>
+
+  <div *ngIf="showLoader" class="loading">
+    <mat-spinner></mat-spinner>
+    <p class="content">{{loaderText ? loaderText : 'Chargement en cours...'}}</p>
+  </div>
+
+  <!--<azf-footer *ngIf="showIfnotUlyss"></azf-footer>-->
+
+  <!--<ece-confirm-dialog></ece-confirm-dialog>-->
+
+  <!--<div class="loading" [ngClass]="{'loaded' : loaded}">-->
+
+    <!--<md-spinner-->
+      <!--style="display: table-cell;-->
+        <!--vertical-align: middle;"></md-spinner>-->
+    <!--<p class="content">Chargement en cours...</p>-->
+  <!--</div>-->
+</div>
